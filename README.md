@@ -2,7 +2,8 @@
 
 Di Mei & Zhihao Wang
 
-Project 1: 
+## Project 1: 
+Part a: Single Node Multi-threaded Prims Algorithm
 
 
 
