@@ -12,7 +12,8 @@ class Prims{
         System.out.print("Enter number of nodes: ");
         v = sc.nextInt();
 
-        int wtMat[][] = new int[v][v];
+        //int wtMat[][] = new int[v][v];
+        int wtMat[][] = {{0,1,3,999,999,2}, {1,0,5,1,999,999}, {3,5,0,2,1,999}, {999,1,2,0,4,999}, {999,999,1,4,0,5}, {2,999,999,999,5,0}};
         System.out.println("\nEnter weight matrix: (Enter 999 for infinite weight)");
 
 //        for (int i=0; i<v; i++){
@@ -20,12 +21,13 @@ class Prims{
 //                wtMat[i][j] = sc.nextInt();
 //            }
 //        }
-        Random r=new Random();
-        for(int i=0;i<v;i++) {
-            for (int j = 0; j < v; j++) {
-                wtMat[i][j] = r.nextInt(20);
-            }
-        }
+
+//        Random r=new Random();
+//        for(int i=0;i<v;i++) {
+//            for (int j = 0; j < v; j++) {
+//                wtMat[i][j] = r.nextInt(20);
+//            }
+//        }
 
         System.out.print("\nEnter source node: ");
         src = sc.nextInt();
@@ -55,6 +57,7 @@ class MST{
                 Node node = new Node();
                 node.val = i;
                 node.dist = wtMat[src][i];
+                node.src = src;
                 rem.add(node);
             }
         }
@@ -62,15 +65,16 @@ class MST{
         MinThread[] threads = new MinThread[div];
 
         while (count < v){
-            segSize = rem.size()/div;
+            segSize = (int) Math.ceil((double)rem.size()/div);
             if (segSize == 0) segSize = rem.size();
             threadCount = 0;
 
             for (int i=0; i<rem.size(); i+=segSize){
                 if (i+segSize < rem.size()) lim = i+segSize;
                 else lim = rem.size();
-                threads[i/segSize] = new MinThread(rem.subList(i, lim));
-                threads[i/segSize].start();
+                int index = i/segSize;
+                threads[index] = new MinThread(rem.subList(i, lim));
+                threads[index].start();
                 threadCount++;
             }
 
@@ -98,7 +102,7 @@ class MST{
             }
 
             for (int i=0; i<rem.size(); i++){
-                if (wtMat[minNode.val][rem.get(i).val] < rem.get(i).dist){
+                if (wtMat[minNode.val][rem.get(i).val] <= rem.get(i).dist){
                     rem.get(i).src = minNode.val;
                     rem.get(i).dist = wtMat[minNode.val][rem.get(i).val];
                 }

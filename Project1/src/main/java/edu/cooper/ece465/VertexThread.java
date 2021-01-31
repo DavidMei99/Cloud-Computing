@@ -2,6 +2,10 @@ package edu.cooper.ece465;
 import java.util.*;
 import java.lang.*;
 
+/**
+
+*/
+
 public class VertexThread extends Thread{
     List <Vertex> remain;
     Vertex minVertex;
@@ -9,7 +13,7 @@ public class VertexThread extends Thread{
         this.remain = remain;
     }
     public void run(){
-        int min = 99999;
+        int min = 999;
         for (int i = 0; i<remain.size(); i++){
             if (remain.get(i).dist < min){
                 min = remain.get(i).dist;
