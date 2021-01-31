@@ -9,11 +9,11 @@ import java.lang.*;
 public class VertexThread extends Thread{
     List <Vertex> remain;
     Vertex minVertex;
-    
+
     public VertexThread(List<Vertex> remain){
         this.remain = remain;
     }
-    
+
     // find the adjacent node with minimum key value
     public void run(){
         int min = 999;

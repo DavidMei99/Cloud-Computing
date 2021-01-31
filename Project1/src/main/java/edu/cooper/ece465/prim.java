@@ -3,6 +3,9 @@ package edu.cooper.ece465;
 import java.util.*;
 import java.text.*;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 /**
 * This project uses mulit-threading to implement the Prim's Algorithm,
 *  which aims to find the minimumspanning tree (MST)given an undirected graph.
@@ -11,6 +14,8 @@ import java.text.*;
 *@ @since 2021-01-29
 */
 public class prim {
+    private static final Logger logger = LogManager.getLogger(prim.class);
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int v, src, div;

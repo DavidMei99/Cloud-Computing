@@ -87,7 +87,7 @@ public class MST {
         System.out.println("Edge\tDistance");
         for (int i=0; i<tree.size(); i++){
             //if (i != src)
-                System.out.println(tree.get(i).src+" - "+tree.get(i).val+"\t"+tree.get(i).dist);
+                System.out.println(tree.get(i).src+" - "+tree.get(i).val+"\t\t"+tree.get(i).dist);
         }
     }
 }
