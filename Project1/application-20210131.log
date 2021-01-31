@@ -1,0 +1,9 @@
+2021-01-31 10:58:55.351 [main] DEBUG edu.cooper.ece465.prim - We've just greeted the user!
+2021-01-31 10:58:55.358 [main] INFO  edu.cooper.ece465.prim - We've just greeted the user!
+2021-01-31 10:58:55.359 [main] WARN  edu.cooper.ece465.prim - We've just greeted the user!
+2021-01-31 10:58:55.359 [main] ERROR edu.cooper.ece465.prim - We've just greeted the user!
+2021-01-31 10:58:55.359 [main] FATAL edu.cooper.ece465.prim - We've just greeted the user!
+2021-01-31 11:10:06.297 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-01-31 11:10:19.823 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-01-31 11:13:19.847 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-01-31 11:13:26.213 [main] INFO  edu.cooper.ece465.prim - Program ends!

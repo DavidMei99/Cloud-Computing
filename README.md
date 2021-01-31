@@ -3,9 +3,9 @@
 Di Mei & Zhihao Wang
 
 ## Project 1: 
-Part a: Single Node Multi-threaded Prim's Algorithm
+**Part a: Single Node Multi-threaded Prim's Algorithm**
 
-A Prim's algorithm is implemented with JAVA in JDK 11.
+A Prim's algorithm is implemented with **JAVA** in JDK 11.
 
 ### Overview:
 Prim’s algorithm is one way to find a minimum spanning tree (MST).
