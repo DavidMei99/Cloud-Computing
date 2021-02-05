@@ -32454,3 +32454,131 @@
 2021-02-05 11:55:08.537 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 23123556 nanoseconds
 2021-02-05 11:55:08.537 [main] INFO  edu.cooper.ece465.MST - for loop time is 27841461 nanoseconds
 2021-02-05 11:55:08.541 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:06:44.653 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:06:51.547 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 4554011 nanoseconds
+2021-02-05 12:06:51.548 [main] INFO  edu.cooper.ece465.MST - for loop time is 5042707 nanoseconds
+2021-02-05 12:06:51.552 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 1438935 nanoseconds
+2021-02-05 12:06:51.552 [main] INFO  edu.cooper.ece465.MST - for loop time is 1750034 nanoseconds
+2021-02-05 12:06:51.554 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:07:19.329 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:07:25.958 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:07:28.757 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 2715161 nanoseconds
+2021-02-05 12:07:28.757 [main] INFO  edu.cooper.ece465.MST - for loop time is 3790807 nanoseconds
+2021-02-05 12:07:28.765 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 2755648 nanoseconds
+2021-02-05 12:07:28.766 [main] INFO  edu.cooper.ece465.MST - for loop time is 3498046 nanoseconds
+2021-02-05 12:07:28.769 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:07:41.731 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:07:45.302 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 4973609 nanoseconds
+2021-02-05 12:07:45.302 [main] INFO  edu.cooper.ece465.MST - for loop time is 6982806 nanoseconds
+2021-02-05 12:07:45.313 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 4661387 nanoseconds
+2021-02-05 12:07:45.314 [main] INFO  edu.cooper.ece465.MST - for loop time is 5764964 nanoseconds
+2021-02-05 12:07:45.316 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:08:04.748 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:08:10.692 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 6062889 nanoseconds
+2021-02-05 12:08:10.694 [main] INFO  edu.cooper.ece465.MST - for loop time is 8284535 nanoseconds
+2021-02-05 12:08:10.705 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 4407225 nanoseconds
+2021-02-05 12:08:10.706 [main] INFO  edu.cooper.ece465.MST - for loop time is 5791604 nanoseconds
+2021-02-05 12:08:10.709 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:08:26.591 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:09:27.451 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 7135365 nanoseconds
+2021-02-05 12:09:27.452 [main] INFO  edu.cooper.ece465.MST - for loop time is 8519833 nanoseconds
+2021-02-05 12:09:27.467 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 6553246 nanoseconds
+2021-02-05 12:09:27.467 [main] INFO  edu.cooper.ece465.MST - for loop time is 8361162 nanoseconds
+2021-02-05 12:09:27.470 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:09:38.904 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:09:41.975 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 5774968 nanoseconds
+2021-02-05 12:09:41.975 [main] INFO  edu.cooper.ece465.MST - for loop time is 8014525 nanoseconds
+2021-02-05 12:09:41.990 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 7325267 nanoseconds
+2021-02-05 12:09:41.990 [main] INFO  edu.cooper.ece465.MST - for loop time is 9121426 nanoseconds
+2021-02-05 12:09:41.993 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:09:53.285 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:09:55.512 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 5156787 nanoseconds
+2021-02-05 12:09:55.512 [main] INFO  edu.cooper.ece465.MST - for loop time is 7217129 nanoseconds
+2021-02-05 12:09:55.525 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 6757337 nanoseconds
+2021-02-05 12:09:55.525 [main] INFO  edu.cooper.ece465.MST - for loop time is 8252565 nanoseconds
+2021-02-05 12:09:55.529 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:10:06.153 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:10:08.513 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 1978264 nanoseconds
+2021-02-05 12:10:08.514 [main] INFO  edu.cooper.ece465.MST - for loop time is 2908849 nanoseconds
+2021-02-05 12:10:08.520 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 2320041 nanoseconds
+2021-02-05 12:10:08.520 [main] INFO  edu.cooper.ece465.MST - for loop time is 3164099 nanoseconds
+2021-02-05 12:10:08.523 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:10:29.968 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:10:31.849 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 5771342 nanoseconds
+2021-02-05 12:10:31.849 [main] INFO  edu.cooper.ece465.MST - for loop time is 8272106 nanoseconds
+2021-02-05 12:10:31.864 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 7670409 nanoseconds
+2021-02-05 12:10:31.864 [main] INFO  edu.cooper.ece465.MST - for loop time is 9503463 nanoseconds
+2021-02-05 12:10:31.868 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:10:41.171 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:10:44.502 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 8290631 nanoseconds
+2021-02-05 12:10:44.502 [main] INFO  edu.cooper.ece465.MST - for loop time is 11481644 nanoseconds
+2021-02-05 12:10:44.526 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 10254399 nanoseconds
+2021-02-05 12:10:44.527 [main] INFO  edu.cooper.ece465.MST - for loop time is 13419986 nanoseconds
+2021-02-05 12:10:44.530 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:10:57.396 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:11:01.056 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 8944835 nanoseconds
+2021-02-05 12:11:01.057 [main] INFO  edu.cooper.ece465.MST - for loop time is 12129806 nanoseconds
+2021-02-05 12:11:01.087 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 13634534 nanoseconds
+2021-02-05 12:11:01.087 [main] INFO  edu.cooper.ece465.MST - for loop time is 17425409 nanoseconds
+2021-02-05 12:11:01.091 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:11:13.438 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:11:15.668 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 13291002 nanoseconds
+2021-02-05 12:11:15.669 [main] INFO  edu.cooper.ece465.MST - for loop time is 18150723 nanoseconds
+2021-02-05 12:11:15.716 [main] INFO  edu.cooper.ece465.MST - Thread.start time is 23695836 nanoseconds
+2021-02-05 12:11:15.716 [main] INFO  edu.cooper.ece465.MST - for loop time is 28363811 nanoseconds
+2021-02-05 12:11:15.719 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:30:12.211 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:30:15.186 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:30:48.021 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:31:11.587 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:31:24.723 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:32:08.469 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:32:53.635 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:34:09.968 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:34:12.834 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:34:18.934 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:34:21.858 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:34:57.641 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:36:22.866 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:45:46.544 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:45:55.224 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:45:57.347 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:46:02.962 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:46:15.545 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:46:18.319 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:46:23.483 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:47:54.631 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:49:02.112 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:51:34.180 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:51:38.201 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:51:43.264 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:51:51.250 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:51:55.640 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:52:00.080 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:52:03.662 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:52:07.860 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:52:20.996 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:52:23.176 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:52:27.756 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:52:34.430 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:52:36.760 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:52:47.354 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:53:41.296 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:53:49.527 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:53:56.889 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:53:58.799 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 12:54:07.304 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 12:57:29.050 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 13:05:36.653 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 13:08:16.008 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 13:08:18.914 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 13:09:20.320 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 13:09:23.353 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 13:10:34.724 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 13:10:36.802 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 13:12:07.000 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 13:12:09.444 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 13:40:41.536 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 13:40:44.425 [main] INFO  edu.cooper.ece465.prim - Program ends!
+2021-02-05 13:41:48.254 [main] INFO  edu.cooper.ece465.prim - Welcome to explore Prim's Algorithm!
+2021-02-05 13:41:52.488 [main] INFO  edu.cooper.ece465.prim - Program ends!

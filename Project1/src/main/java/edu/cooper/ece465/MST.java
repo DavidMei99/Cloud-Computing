@@ -33,17 +33,15 @@ public class MST {
         VertexThread[] threads = new VertexThread[div];
         // declare thread properties
         int segSize, segLim, threadCount, min;
-        // create the MST through iteration
-        long time_count = 0;
-        long time_count2 = 0;
 
+        //create the MST through iteration
         while (vcount<v){
             segSize = (int) Math.ceil((double)remain.size()/div);
             //if (segSize == 0) segSize = remain.size();
             threadCount = 0;
 
 
-            long start2 = System.nanoTime();
+//            long start2 = System.nanoTime();
             // assign tasks to different threads
             for (int i=0; i<remain.size(); i+=segSize){
                 if (i+segSize < remain.size()) segLim = i+segSize;
@@ -51,18 +49,13 @@ public class MST {
                 int index = i/segSize;
                 threads[index] = new VertexThread(remain.subList(i, segLim));
 
-                long start = System.nanoTime();
 
                 threads[index].start();
 
-                long end = System.nanoTime();
-                time_count +=(end-start);
+
 
                 threadCount++;
             }
-
-            long end2 = System.nanoTime();
-            time_count2 +=(end2-start2);
 
 
 
@@ -92,7 +85,6 @@ public class MST {
             }
 
 
-
             // add minVertex to the MST and remove it from remaining vertices
             if (minVertex != null){
                 tree.add(minVertex);
@@ -108,8 +100,8 @@ public class MST {
             vcount++;
         }
 
-        logger.info("Thread.start time is " + time_count + " nanoseconds");
-        logger.info("for loop time is " + time_count2 + " nanoseconds");
+//        logger.info("Thread.start time is " + time_count + " nanoseconds");
+//        logger.info("for loop time is " + time_count2 + " nanoseconds");
 
         Collections.sort(tree, new Comparator<Vertex>(){
             public int compare(Vertex n1, Vertex n2){
@@ -120,12 +112,12 @@ public class MST {
         // display the MST in the standard output
         System.out.println("\nMinimum Spanning Tree: ");
         System.out.println("Edge\tDistance");
-        /*
+
         for (int i=0; i<tree.size(); i++){
             //if (i != src)
                 System.out.println(tree.get(i).src+" - "+tree.get(i).val+"\t\t"+tree.get(i).dist);
         }
 
-         */
+
     }
 }
