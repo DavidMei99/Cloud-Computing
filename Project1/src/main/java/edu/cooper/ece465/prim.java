@@ -31,8 +31,8 @@ public class prim {
         System.out.print("\nEnter div number: ");
         div = sc.nextInt();
 
-        int wtMat6[][] = {{0,1,3,999,999,2}, {1,0,5,1,999, 999}, {3,5,0,2,1,999},
-                         {999, 1, 2, 0, 4, 999}, {999,999,1,4,0,5}, {2,999,999,999,5,0}};
+//        int wtMat6[][] = {{0,1,3,999,999,2}, {1,0,5,1,999, 999}, {3,5,0,2,1,999},
+//                         {999, 1, 2, 0, 4, 999}, {999,999,1,4,0,5}, {2,999,999,999,5,0}};
         /*int wtMat[][] = {{0, 5,1,4,999,999,999}, {5,0,999, 8,999,6, 999}, {1,999,0,3,2,999, 999},
                 {4,8,3,0,8,999,999}, {999,999,2,999,0,7,9}, {999,999,999,8,7,0,999}, {999,999,999,999,9,999,0}}; */
 
@@ -41,22 +41,50 @@ public class prim {
         Random r=new Random();
         for(int i=0;i<v;i++) {
             for (int j = 0; j < v; j++) {
+                float if_connect = r.nextFloat();
                 if (i==j) wtMat[i][j] = 0;
-                else wtMat[i][j] = r.nextInt(20)+1;
+                else wtMat[i][j] =999;
+            }
+        }
+        for(int i=0;i<v;i++) {
+            for (int j = i; j < v; j++) {
+                float if_connect = r.nextFloat();
+                if (i==j) wtMat[i][j] = 0;
+                else {
+                    if (if_connect<0.2) {
+                        wtMat[i][j] = r.nextInt(20) + 1;
+                        wtMat[j][i] = wtMat[i][j];
+                    }
+                }
             }
         }
 
-        MST mst = new MST();
+
+
+
+
         long start = System.currentTimeMillis();
-        mst.findMST(wtMat, v, src, div);
+        MST mst = new MST();
+        mst.findMST(wtMat, v, src, 1);
         long end = System.currentTimeMillis();
         NumberFormat formatter = new DecimalFormat("#0.00000");
-        System.out.println("Execution time for div=1 is " + formatter.format((end - start) / 1000d) + " seconds");
         long start2 = System.currentTimeMillis();
-        mst.findMST(wtMat, v, src, div+3);
+        MST mst2 = new MST();
+        mst2.findMST(wtMat, v, src, 2);
         long end2 = System.currentTimeMillis();
-        System.out.println("Execution time for div=4 is " + formatter.format((end2 - start2) / 1000d) + " seconds");
+
+        //print2D(wtMat);
+        System.out.println("Execution time for div=1 is " + formatter.format((end - start) / 1000d) + " seconds");
+        System.out.println("Execution time for div=2 is " + formatter.format((end2 - start2) / 1000d) + " seconds");
 
         logger.info("Program ends!");
+    }
+    public static void print2D(int mat[][]){
+        // Loop through all rows
+        for (int[] row : mat)
+
+            // converting each row as string
+            // and then printing in a separate line
+            System.out.println(Arrays.toString(row));
     }
 }
