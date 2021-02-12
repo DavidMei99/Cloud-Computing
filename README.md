@@ -2,6 +2,10 @@
 
 Di Mei & Zhihao Wang
 
+## **Project 2**
+**Part a: Multi Node Multi-threaded Prim's Algorithm**
+[Documentation]()
+
 ## **Project 1**
 **Part a: Single Node Multi-threaded Prim's Algorithm**
 
