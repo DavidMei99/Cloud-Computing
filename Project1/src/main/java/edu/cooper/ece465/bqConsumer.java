@@ -45,7 +45,7 @@ public class bqConsumer implements Runnable {
                         LOG.debug(String.format("ENDING %s",msg.getMsg()));
                         break;
                     }
-                    String[] arrOfStr = message.split("-", 6);
+                    String[] arrOfStr = message.split("-", 1000);
                     i = i%arrOfStr.length;
                     int j = 0;
 

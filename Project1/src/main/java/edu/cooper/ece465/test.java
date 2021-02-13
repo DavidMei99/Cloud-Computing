@@ -17,6 +17,8 @@ public class test {
         Scanner sc = new Scanner(System.in);
         int v, src, div;
 
+        System.out.print("Enter number of vertex: ");
+        v = sc.nextInt();
 
         System.out.print("\nEnter source vertex (0-#vertex): ");
         src = sc.nextInt();
@@ -24,7 +26,34 @@ public class test {
         System.out.print("\nEnter thread number (default=2): ");
         div = sc.nextInt();
 
-
+        int wtMat[][] = new int[v][v];
+        Random r=new Random();
+        for(int i=0;i<v;i++) {
+            for (int j = 0; j < v; j++) {
+                float if_connect = r.nextFloat();
+                if (i==j) wtMat[i][j] = 0;
+                else wtMat[i][j] =999;
+            }
+        }
+        for(int i=0;i<v;i++) {
+            int line_check = 0;
+            for (int j = i; j < v; j++) {
+                float if_connect = r.nextFloat();
+                if (i==j) {
+                    wtMat[i][j] = 0;
+                } else {
+                    if (if_connect<0.2) {
+                        wtMat[i][j] = r.nextInt(20) + 1;
+                        wtMat[j][i] = wtMat[i][j];
+                        line_check += 1;
+                    }
+                }
+            }
+            if (line_check == 0 && i != v-1) {
+                wtMat[i][v-1] = r.nextInt(20) + 1;
+                wtMat[v-1][i] = wtMat[i][v-1];
+            }
+        }
 
         //Creating BlockingQueue of size 10
         LOG.debug("Creating new queue");
@@ -32,8 +61,11 @@ public class test {
         ConcurrentLinkedQueue<Message> queue = new ConcurrentLinkedQueue<>();
         LOG.debug("Creating new queue - DONE");
         LOG.debug("Creating producer");
-        int wtMat[][] = {{0, 1, 3, 999, 999, 2}, {1, 0, 5, 1, 999, 999}, {3, 5, 0, 2, 1, 999},
-                {999, 1, 2, 0, 4, 999}, {999, 999, 1, 4, 0, 5}, {2, 999, 999, 999, 5, 0}};
+
+//        int wtMat[][] = {{0, 1, 3, 999, 999, 2}, {1, 0, 5, 1, 999, 999}, {3, 5, 0, 2, 1, 999},
+//                {999, 1, 2, 0, 4, 999}, {999, 999, 1, 4, 0, 5}, {2, 999, 999, 999, 5, 0}};
+
+
         bqProducer producer = new bqProducer(queue, wtMat);
         LOG.debug("Creating producer - DONE");
         int mat_len = producer.matLength();
@@ -72,7 +104,7 @@ public class test {
         LOG.info("Program ends!");
     }
 
-        public static void print2D ( int mat[][]){
+        public static void print2D (int mat[][]){
             // Loop through all rows
             for (int[] row : mat)
 

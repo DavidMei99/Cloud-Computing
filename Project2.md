@@ -8,8 +8,18 @@
 - Build and run main in **test** class 
 
 ### Overview
-This project utilized the producer-consumer concurrent multithread model in JAVA. The model is used to make sure that the producer won’t try to add data into the buffer if it’s full and that the consumer won’t try to remove data from an empty buffer. In the problem of finding MST using Prim's algorithm, the model 
+Prim’s algorithm is a **greedy** way to find a minimum spanning tree (MST) given an undirected, weighted and connected graph.
+An **MST** contains all the vertices of that graph and also achieves minimum weight. In the program, we incorporate this algorithm, which makes use of multi-threading, into a 2-node architecture. Such model has two sides, producer and consumer, with each of them responsible for delievering and receving graph info concurrently. The Prim's algorithm starts to be run once consumer receives a complete graph. We present one test case, where the graph is represented by a |V| * |V| adjacency matrix (|V| is the total number of vertices in the graph).
 
+### Performance
+Excution Time:
+|# of vertices| 2 Threads |
+|------------|------------|-------------| 
+|10|0.014 s|
+|20| 0.015 s| 
+|30| 0.019 s| 
+|40| 0.021 s| 
+</br>
 
 ### Future Work
 - Continue to improve performance for the Prim's algorithm
