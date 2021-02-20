@@ -4,6 +4,7 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.*;
 import java.lang.*;
+import java.util.concurrent.atomic.*;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 /**
@@ -17,6 +18,7 @@ public class MST {
         List<Vertex> remain = new ArrayList<>();
         int vcount = 1;
         Vertex minVertex;
+        AtomicBoolean isFinished = new AtomicBoolean(false);
 
         // add the initial node to the tree
         Vertex srcVertex = new Vertex(src, src, 0);
@@ -40,24 +42,17 @@ public class MST {
             //if (segSize == 0) segSize = remain.size();
             threadCount = 0;
 
-
-//            long start2 = System.nanoTime();
+            // long start2 = System.nanoTime();
             // assign tasks to different threads
             for (int i=0; i<remain.size(); i+=segSize){
                 if (i+segSize < remain.size()) segLim = i+segSize;
                 else segLim = remain.size();
                 int index = i/segSize;
-                threads[index] = new VertexThread(remain.subList(i, segLim));
-
-
+                List <Vertex> remainSublist = new ArrayList<>(remain.subList(i, segLim));
+                threads[index] = new VertexThread(remainSublist, 6666+i, isFinished);
                 threads[index].start();
-
-
-
                 threadCount++;
             }
-
-
 
             // make calling threads go to waiting state
             try{
