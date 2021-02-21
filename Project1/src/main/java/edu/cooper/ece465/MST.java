@@ -51,7 +51,7 @@ public class MST {
                 else segLim = remain.size();
                 int index = i/segSize;
                 List <Vertex> remainSublist = new ArrayList<>(remain.subList(i, segLim));
-                threads[index] = new VertexThread(remainSublist, 6666+vcount, isFinished);
+                threads[index] = new VertexThread(remainSublist, 6666+i, isFinished);
                 threads[index].start();
                 threadCount++;
             }
@@ -82,12 +82,19 @@ public class MST {
                 }
             }
 
-
-
             // add minVertex to the MST and remove it from remaining vertices
             if (minVertex != null){
                 System.out.println("minvertex found");
                 tree.add(minVertex);
+
+//                System.out.println("remain before update:");
+//                for (Vertex vertex: remain){
+//                    System.out.println(vertex.val);
+//                }
+                for (Vertex vertex: remain){
+                    if (minVertex.val == vertex.val)
+                        minVertex = vertex;
+                }
                 remain.remove(minVertex);
             }
             // update properties of nodes
@@ -97,6 +104,9 @@ public class MST {
                     remain.get(i).dist = wtMat[minVertex.val][remain.get(i).val];
                 }
             }
+
+
+
             vcount++;
         }
 

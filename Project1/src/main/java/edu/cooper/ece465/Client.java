@@ -36,8 +36,15 @@ public class Client {
             System.out.println("Input Smsg");
             smsg = (Message) objectInputStream.readObject();
             this.remain = smsg.getMsg();
+
+
+            System.out.println("remain before finding:");
+            for (Vertex vertex: remain){
+                System.out.println(vertex.val);
+            }
+
             for (int i = 0; i<remain.size(); i++){
-                if (remain.get(i).dist < min){
+                if (remain.get(i).dist <= min){
                     min = remain.get(i).dist;
                     minVertex = remain.get(i);
                 }
@@ -49,7 +56,6 @@ public class Client {
             objectOutputStream.writeObject(new ClientMessage(minVertex));
             objectOutputStream.reset();
             end = Instant.now();
-            //s.close();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }

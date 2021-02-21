@@ -72,7 +72,7 @@ public class prim {
 
         long start = System.currentTimeMillis();
         MST mst = new MST();
-        mst.findMST(wtMat6, v, src, 1);
+        mst.findMST(wtMat6, v, src, 2);
         long end = System.currentTimeMillis();
         NumberFormat formatter = new DecimalFormat("#0.00000");
 
