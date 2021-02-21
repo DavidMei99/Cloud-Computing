@@ -16,8 +16,17 @@ public class MST {
     public void findMST(int wtMat[][], int v, int src, int div){
         List<Vertex> tree = new ArrayList<>();
         List<Vertex> remain = new ArrayList<>();
+        List<Integer> portlist = new ArrayList<>();
         int vcount = 1;
         Vertex minVertex;
+
+        // take portnumbers from user's input
+        Scanner sc = new Scanner(System.in);
+        for (int i=0; i<div; i++){
+            System.out.print("Enter a port number: ");
+            int port = sc.nextInt();
+            portlist.add(port);
+        }
 
         // add the initial node to the tree
         Vertex srcVertex = new Vertex(src, src, 0);
@@ -42,18 +51,19 @@ public class MST {
             //if (segSize == 0) segSize = remain.size();
             threadCount = 0;
 
-
             // long start2 = System.nanoTime();
             // assign tasks to different threads
+            int port_index = 0;
             for (int i=0; i<remain.size(); i+=segSize){
                 AtomicBoolean isFinished = new AtomicBoolean(false);
                 if (i+segSize < remain.size()) segLim = i+segSize;
                 else segLim = remain.size();
                 int index = i/segSize;
                 List <Vertex> remainSublist = new ArrayList<>(remain.subList(i, segLim));
-                threads[index] = new VertexThread(remainSublist, 6666+i, isFinished);
+                threads[index] = new VertexThread(remainSublist, portlist.get(port_index), isFinished);
                 threads[index].start();
                 threadCount++;
+                port_index++;
             }
 
             // make calling threads go to waiting state
