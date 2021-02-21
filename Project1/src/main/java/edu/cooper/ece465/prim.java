@@ -31,8 +31,8 @@ public class prim {
         System.out.print("\nEnter thread number (default=2): ");
         div = sc.nextInt();
 
-//        int wtMat6[][] = {{0,1,3,999,999,2}, {1,0,5,1,999, 999}, {3,5,0,2,1,999},
-//                         {999, 1, 2, 0, 4, 999}, {999,999,1,4,0,5}, {2,999,999,999,5,0}};
+        int wtMat6[][] = {{0,1,3,999,999,2}, {1,0,5,1,999, 999}, {3,5,0,2,1,999},
+                         {999, 1, 2, 0, 4, 999}, {999,999,1,4,0,5}, {2,999,999,999,5,0}};
         /*int wtMat[][] = {{0, 5,1,4,999,999,999}, {5,0,999, 8,999,6, 999}, {1,999,0,3,2,999, 999},
                 {4,8,3,0,8,999,999}, {999,999,2,999,0,7,9}, {999,999,999,8,7,0,999}, {999,999,999,999,9,999,0}}; */
 
@@ -67,12 +67,12 @@ public class prim {
         }
 
         System.out.println("Adjacency Matrix:  ");
-        print2D(wtMat);
+        print2D(wtMat6);
 
 
         long start = System.currentTimeMillis();
         MST mst = new MST();
-        mst.findMST(wtMat, v, src, 2);
+        mst.findMST(wtMat6, v, src, 1);
         long end = System.currentTimeMillis();
         NumberFormat formatter = new DecimalFormat("#0.00000");
 

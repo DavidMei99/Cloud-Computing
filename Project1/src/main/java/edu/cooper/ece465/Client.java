@@ -43,6 +43,8 @@ public class Client {
                 }
             }
 
+            System.out.println("Client found minvertex "+ minVertex.val);
+
             System.out.println("Write minVertex");
             objectOutputStream.writeObject(new ClientMessage(minVertex));
             objectOutputStream.reset();

@@ -46,22 +46,33 @@ public class VertexThread extends Thread{
 
             // Setup write to client
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
+            System.out.println("finished write to client");
             // Setup read from client
             ObjectInputStream objectInputStream = new ObjectInputStream(socket.getInputStream());
+            System.out.println("finished read from client");
+
+
+            System.out.println("isfinished"+isFinished.get());
 
             while (!isFinished.get()) {
-                objectOutputStream.writeObject(new Message(remain));
+                //System.out.println("while loop in server starts");
+                Message msg = new Message(remain);
+                System.out.println(msg.getMsg());
+                objectOutputStream.writeObject(msg);
                 System.out.println("server write success");
                 objectOutputStream.reset();
-            }
-            //wait for node response
-            ClientMessage cmsg = (ClientMessage)objectInputStream.readObject();
-            //check received message
-            if (cmsg.getMinVertex() != null) {
-                minVertex = cmsg.getMinVertex();
+
+                //wait for node response
+                ClientMessage cmsg = (ClientMessage)objectInputStream.readObject();
+                //check received message
+                if (cmsg.getMinVertex() != null) {
+                    minVertex = cmsg.getMinVertex();
+                }
+
+                isFinished.set(true);
             }
 
-            //socket.close();
+            socket.close();
             //wait for other threads to finish as well
             //barrier.await();
             } catch (IOException | ClassNotFoundException e) {
@@ -72,6 +83,5 @@ public class VertexThread extends Thread{
     public Vertex getMin(){
         return minVertex;
     }
-
 
 }

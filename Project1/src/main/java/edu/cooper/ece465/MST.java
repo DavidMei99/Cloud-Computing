@@ -18,7 +18,6 @@ public class MST {
         List<Vertex> remain = new ArrayList<>();
         int vcount = 1;
         Vertex minVertex;
-        AtomicBoolean isFinished = new AtomicBoolean(false);
 
         // add the initial node to the tree
         Vertex srcVertex = new Vertex(src, src, 0);
@@ -38,18 +37,21 @@ public class MST {
 
         //create the MST through iteration
         while (vcount<v){
+            System.out.println("Whileloop"+vcount);
             segSize = (int) Math.ceil((double)remain.size()/div);
             //if (segSize == 0) segSize = remain.size();
             threadCount = 0;
 
+
             // long start2 = System.nanoTime();
             // assign tasks to different threads
             for (int i=0; i<remain.size(); i+=segSize){
+                AtomicBoolean isFinished = new AtomicBoolean(false);
                 if (i+segSize < remain.size()) segLim = i+segSize;
                 else segLim = remain.size();
                 int index = i/segSize;
                 List <Vertex> remainSublist = new ArrayList<>(remain.subList(i, segLim));
-                threads[index] = new VertexThread(remainSublist, 6666+i, isFinished);
+                threads[index] = new VertexThread(remainSublist, 6666+vcount, isFinished);
                 threads[index].start();
                 threadCount++;
             }
@@ -73,6 +75,7 @@ public class MST {
 
             for (int i=0; i<threadCount; i++){
                 Vertex tempVertex = threads[i].getMin();
+                System.out.println("Server received minVertex "+tempVertex.val);
                 if (tempVertex != null && tempVertex.dist < min){
                     min = tempVertex.dist;
                     minVertex = tempVertex;
@@ -80,8 +83,10 @@ public class MST {
             }
 
 
+
             // add minVertex to the MST and remove it from remaining vertices
             if (minVertex != null){
+                System.out.println("minvertex found");
                 tree.add(minVertex);
                 remain.remove(minVertex);
             }
