@@ -5,6 +5,6 @@ public class ClientMain {
 
         Client client = new Client("localhost", 6666);
         long runtime = client.run();
-
+        System.out.println(runtime);
     }
 }

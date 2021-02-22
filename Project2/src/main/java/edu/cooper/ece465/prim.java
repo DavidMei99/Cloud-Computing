@@ -33,8 +33,8 @@ public class prim {
 
         int wtMat6[][] = {{0,1,3,999,999,2}, {1,0,5,1,999, 999}, {3,5,0,2,1,999},
                          {999, 1, 2, 0, 4, 999}, {999,999,1,4,0,5}, {2,999,999,999,5,0}};
-        /*int wtMat[][] = {{0, 5,1,4,999,999,999}, {5,0,999, 8,999,6, 999}, {1,999,0,3,2,999, 999},
-                {4,8,3,0,8,999,999}, {999,999,2,999,0,7,9}, {999,999,999,8,7,0,999}, {999,999,999,999,9,999,0}}; */
+//        int wtMat[][] = {{0, 5,1,4,999,999,999}, {5,0,999, 8,999,6, 999}, {1,999,0,3,2,999, 999},
+//                {4,8,3,0,8,999,999}, {999,999,2,999,0,7,9}, {999,999,999,8,7,0,999}, {999,999,999,999,9,999,0}};
 
         // randomly generate a weight matrix representing the connected graph
         int wtMat[][] = new int[v][v];
@@ -67,12 +67,12 @@ public class prim {
         }
 
         System.out.println("Adjacency Matrix:  ");
-        print2D(wtMat6);
+        //print2D(wtMat);
 
 
         long start = System.currentTimeMillis();
         MST mst = new MST();
-        mst.findMST(wtMat6, v, src, 2);
+        mst.findMST(wtMat, v, src, div);
         long end = System.currentTimeMillis();
         NumberFormat formatter = new DecimalFormat("#0.00000");
 
@@ -82,7 +82,7 @@ public class prim {
 //        long end2 = System.currentTimeMillis();
 
 
-        System.out.println("Execution time for div=2 is " + formatter.format((end - start) / 1000d) + " seconds");
+        System.out.println("Execution time for " +div+ " threads is " + formatter.format((end - start) / 1000d) + " seconds");
 //        System.out.println("Execution time for div=2 is " + formatter.format((end2 - start2) / 1000d) + " seconds");
         logger.info("Program ends!");
     }
