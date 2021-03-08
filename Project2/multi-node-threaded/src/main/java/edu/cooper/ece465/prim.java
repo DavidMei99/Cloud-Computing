@@ -3,8 +3,8 @@ package edu.cooper.ece465;
 import java.util.*;
 import java.text.*;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 /**
 * This project uses mulit-threading to implement the Prim's Algorithm,

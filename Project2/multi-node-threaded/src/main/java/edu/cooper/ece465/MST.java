@@ -5,8 +5,8 @@ import java.text.NumberFormat;
 import java.util.*;
 import java.lang.*;
 import java.util.concurrent.atomic.*;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 /**
 * The MST class implements an application that uses multi-threading
 * to create an MST, displayed in standard output.
