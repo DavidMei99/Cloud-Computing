@@ -5,17 +5,25 @@ import edu.cooper.ece465.*;
 import java.util.*;
 
 public class ClientMessage implements Serializable {
-    private Vertex minVertex;
+    private int startInd;
+    private int endInd;
+    private ArrayList<Integer> outputLab;
 
-    public ClientMessage(Vertex minVertex){
-        this.minVertex = minVertex;
+    public ClientMessage(int si, int ei, ArrayList<Integer> outputLab){
+        this.startInd = si;
+        this.endInd = ei;
+        this.outputLab = outputLab;
     }
 
-    public Vertex getMinVertex(){
-        return minVertex;
+    public int getStartInd(){
+        return this.startInd;
     }
 
-    public void setMinVertex(Vertex minVertex){
-        this.minVertex = minVertex;
+    public int getEndInd(){
+        return this.endInd;
+    }
+
+    public ArrayList<Integer> getOutputLab(){
+        return this.outputLab;
     }
 }
