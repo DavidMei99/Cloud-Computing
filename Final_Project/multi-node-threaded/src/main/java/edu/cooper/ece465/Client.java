@@ -45,7 +45,7 @@ public class Client {
             smsg = (Message) objectInputStream.readObject();
             startInd = smsg.getStartInd();
             endInd = smsg.getEndInd();
-            testingLabels = new ArrayList<>(Arrays.asList(new Integer[endInd-startInd+1]));
+            testingLabels = new ArrayList<>(Arrays.asList(new Integer[endInd-startInd]));
 
 
             for (int pointNum = startInd; pointNum < endInd; pointNum++) {

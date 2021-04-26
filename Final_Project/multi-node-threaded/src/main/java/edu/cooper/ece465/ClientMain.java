@@ -147,7 +147,8 @@ public class ClientMain {
         clientm.parseTestingVectors(testingVectorsFileName);
         System.out.println("finish parsing files!");
 
-        Client client = new Client("localhost", 6666, k, clientm.trainingVectors, clientm.trainingLabels, clientm.testingVectors);
+        int portnum = Integer.parseInt(args[2]); // port number
+        Client client = new Client("localhost", portnum, k, clientm.trainingVectors, clientm.trainingLabels, clientm.testingVectors);
         long runtime = client.run();
         System.out.println(runtime);
     }

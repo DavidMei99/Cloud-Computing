@@ -186,7 +186,7 @@ public class KNN{
             this.outputLabels.add(-1);
         }
         System.out.println("Setting up threads");
-        int NUM_THREADS = 8;
+        int NUM_THREADS = 4;
         ClassifyThread[] allThreads = new ClassifyThread[NUM_THREADS];
         int incr = numOutputPoints/NUM_THREADS;
         int start = 0;
@@ -222,7 +222,10 @@ public class KNN{
         for(int k=0; k<NUM_THREADS; k++){
             ArrayList<Integer> temp_labs = allThreads[k].outputLab;
             int temp_ind = allThreads[k].startIdx;
+            System.out.println("startindex: " + temp_ind);
+            System.out.println(temp_labs.size());
             for(int i=0; i<temp_labs.size(); i++){
+                //System.out.println(temp_ind+i + " " + i);
                 outputLabels.set(temp_ind+i, temp_labs.get(i));
             }
         }
