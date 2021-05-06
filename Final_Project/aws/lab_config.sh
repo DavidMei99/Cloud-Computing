@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-# PROFILE=default
+PROFILE=produser
 REGION=us-east-1
-# PREAMBLE="--profile ${PROFILE} --region ${REGION}"
-PREAMBLE="--region ${REGION}"
+PREAMBLE="--profile ${PROFILE} --region ${REGION}"
 
 VPC_CDR=10.0.0.0/16
 PUBLIC_CDR=10.0.1.0/24
