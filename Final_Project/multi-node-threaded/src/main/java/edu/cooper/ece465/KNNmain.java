@@ -33,19 +33,30 @@ public class KNNmain{
         String testVectorsFileName = args[1];
         String testLabelsFileName = "";
         boolean checkOutput = false;
-        if(args.length > 2){
+        if(args.length > 6){
             checkOutput = true;
             testLabelsFileName = args[2];
+        }
+        // temporarily set number of threads to 4
+        String[] clientIPs = new String[4];
+        int str_ind = 2;
+        if(checkOutput){
+            str_ind = 3;
+        }
+        // parse client ips
+        for(int i=str_ind; i<args.length; i++){
+            clientIPs[i-str_ind] = args[i];
         }
 
         KNN classifier;
 
         try{
             long startTime = System.currentTimeMillis();
-            classifier = new KNN(k, vectorSize, trainingVectorsFileName, trainingLabelsFileName);
+            classifier = new KNN(k, vectorSize, trainingVectorsFileName, trainingLabelsFileName, clientIPs);
             classifier.classify(testVectorsFileName);
             if(checkOutput){
                 classifier.checkOutput(testLabelsFileName, 0);
+                classifier.outputClassification("KNeighborsOut.csv");
             }else{
                 classifier.outputClassification("KNeighborsOut.csv");
             }

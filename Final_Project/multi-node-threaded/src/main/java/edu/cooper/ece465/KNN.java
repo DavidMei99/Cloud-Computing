@@ -32,6 +32,7 @@ public class KNN{
     public ArrayList<double[]> trainingVectors;
     public ArrayList<double[]> testingVectors; // correspond to outputVectors
     public ArrayList<Integer> outputLabels;
+    public String[] clientIPs;
 
     /**
      * Initializes the KNN classifier by reading in the training data from the given file
@@ -41,7 +42,7 @@ public class KNN{
      * @param  trainingVectors  the name of the file containing the training features
      * @param  trainingLabels   the name of the file containing the training labels
      */
-    public KNN(int k, int vectorSize, String trainingVectors, String trainingLabels) throws FileNotFoundException,IOException{
+    public KNN(int k, int vectorSize, String trainingVectors, String trainingLabels, String[] clientips) throws FileNotFoundException,IOException{
         K_VAL = k;
         VEC_VAL = vectorSize;
         System.out.println("Initializing K-Nearest Neighbors Classifier");
@@ -55,6 +56,7 @@ public class KNN{
         System.out.println("");
         parseTrainingLabels(trainingLabels);
 
+        clientIPs = clientips;
         trained = true;
         System.out.println("");
     }
@@ -192,18 +194,18 @@ public class KNN{
         int start = 0;
         int end = incr;
 
-        Scanner sc = new Scanner(System.in);
-        for (int i=0; i<NUM_THREADS; i++){
-            System.out.print("Enter a port number: ");
-            //int port = sc.nextInt();
-            int port = 6666+i;
-            portlist.add(port);
-        }
+//        Scanner sc = new Scanner(System.in);
+//        for (int i=0; i<NUM_THREADS; i++){
+//            System.out.print("Enter a port number: ");
+//            //int port = sc.nextInt();
+//            int port = 6666+i;
+//            portlist.add(port);
+//        }
 
 
         for(int j=0; j<NUM_THREADS; j++){
             AtomicBoolean isFinished = new AtomicBoolean(false);
-            allThreads[j] = new ClassifyThread(j, start, end, portlist.get(j), isFinished);
+            allThreads[j] = new ClassifyThread(j, start, end, clientIPs[j], 6666, isFinished);
             start = end;
             end  = end + incr;
         }
