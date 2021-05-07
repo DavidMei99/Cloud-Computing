@@ -31,15 +31,17 @@ class ClassifyThread extends Thread{
     int startIdx;
     int endIdx;
     int tnum;
+    String clientIP;
     int portNumber;
     AtomicBoolean isFinished;
     
     ArrayList<Integer> outputLab;
 
-    public ClassifyThread(int tnum, int start, int end, int portNum, AtomicBoolean isFinished){
+    public ClassifyThread(int tnum, int start, int end, String CIP, int portNum, AtomicBoolean isFinished){
         this.startIdx = start;
         this.endIdx = end;
         this.tnum = tnum;
+        this.clientIP = CIP;
         this.portNumber = portNum;
         this.isFinished = isFinished;
         System.out.println("Thread "+tnum+" assigned indices: "+start+" to "+end);
@@ -50,8 +52,8 @@ class ClassifyThread extends Thread{
         // classifyThread(startIdx, endIdx);
 
         System.out.println("Establishing connection on port " + portNumber);
-        try(ServerSocket serversocket = new ServerSocket(portNumber)){
-            Socket socket = serversocket.accept();
+        try(Socket socket = new Socket(clientIP, portNumber)){
+            // Socket socket = serversocket.accept();
             System.out.println("Connection established on port " + portNumber);
 
             // Setup write to client
@@ -73,12 +75,14 @@ class ClassifyThread extends Thread{
 
                 //wait for node response
                 ClientMessage cmsg = (ClientMessage)objectInputStream.readObject();
+                System.out.println("server read success");
                 //check received message
                 if (cmsg.getOutputLab() != null) {
                     outputLab = cmsg.getOutputLab();
                 }
 
                 isFinished.set(true);
+                System.out.println("isfinished"+isFinished.get());
             }
 
             socket.close();

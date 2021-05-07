@@ -20,3 +20,7 @@ APP_TYPE=type
 APP_TYPE_NAME=distributed-app
 APP_TAG_NAME=APP
 APP_TAG_VALUE=multi-node
+
+BUCKET_NAME=knnbucket
+ELASTIC_ID=eipalloc-0b3a4d55ff4451d23
+ELASTIC_IP=54.145.230.99

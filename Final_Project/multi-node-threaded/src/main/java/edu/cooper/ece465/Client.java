@@ -35,7 +35,8 @@ public class Client {
         System.out.println("Worker started on port " + portNumber);
         Instant start = Instant.now();
         Instant end = Instant.now();
-        try(Socket s = new Socket(host, portNumber)){
+        try(ServerSocket ss = new ServerSocket(portNumber)){
+            Socket s = ss.accept();
             System.out.println("Connection establish with " + host + "::" + portNumber);
             ObjectInputStream objectInputStream = new ObjectInputStream(s.getInputStream());
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(s.getOutputStream());
@@ -84,11 +85,12 @@ public class Client {
                 }
             }
 
-
             objectOutputStream.writeObject(new ClientMessage(startInd, endInd, testingLabels));
+            System.out.println("Client write success!!!");
+            Thread.sleep(2000);
             objectOutputStream.reset();
             end = Instant.now();
-        } catch (IOException | ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException | InterruptedException e) {
             e.printStackTrace();
         }
 
