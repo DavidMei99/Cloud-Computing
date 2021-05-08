@@ -7,4 +7,3 @@ Di Mei & Zhihao Wang
 Multi-node Multi-threaded k-NN Algorithm in JAVA
 
 
-**HWs in HW folder**
