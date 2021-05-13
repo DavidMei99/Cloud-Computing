@@ -22,5 +22,6 @@ APP_TAG_NAME=APP
 APP_TAG_VALUE=multi-node
 
 BUCKET_NAME=knnbucket
+DIR_NAME=uploadfiles
 ELASTIC_ID=eipalloc-0b3a4d55ff4451d23
 ELASTIC_IP=54.145.230.99
