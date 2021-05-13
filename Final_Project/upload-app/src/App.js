@@ -6,16 +6,22 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import React, { Component, useState } from 'react';
 import { uploadFile } from 'react-s3';
-import UploadImageToS3WithNativeSdk from "./components/UploadImageToS3WithNativeSdk"
-import UploadImageToS3WithReactS3 from "./components/UploadImageToS3WithReactS3"
+//import UploadImageToS3WithNativeSdk from "./components/UploadImageToS3WithNativeSdk"
+//import UploadImageToS3WithReactS3 from "./components/UploadImageToS3WithReactS3"
 
+
+const S3_BUCKET =process.env.REACT_APP_S3_BUCKET;
+const DIR_NAME = process.env.REACT_APP_DIR_NAME;
+const REGION =process.env.REACT_APP_REGION;
+const ACCESS_KEY =process.env.REACT_APP_ACCESS_KEY;
+const SECRET_ACCESS_KEY =process.env.REACT_APP_SECRET_ACCESS_KEY;
 
 const config = {
-    bucketName: process.env.S3_BUCKET,
-    dirName: process.env.DIR_NAME,
-    region: process.env.REGION,
-    accessKeyId: process.env.ACCESS_KEY,
-    secretAccessKey: process.env.SECRET_ACCESS_KEY,
+  bucketName: S3_BUCKET,
+  dirName: DIR_NAME,
+  region: REGION,
+  accessKeyId: ACCESS_KEY,
+  secretAccessKey: SECRET_ACCESS_KEY,
 }
 
 // class App extends Component {
@@ -91,6 +97,7 @@ function App() {
   const [selectedFile, setSelectedFile] = useState(null);
 
     const handleFileInput = (e) => {
+        console.log(config)
         setSelectedFile(e.target.files[0]);
     }
 
