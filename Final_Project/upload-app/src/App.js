@@ -6,23 +6,22 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import React, { Component, useState } from 'react';
 import { uploadFile } from 'react-s3';
-import UploadImageToS3WithNativeSdk from "./components/UploadImageToS3WithNativeSdk"
-import UploadImageToS3WithReactS3 from "./components/UploadImageToS3WithReactS3"
-
-const S3_BUCKET ='knnbucket';
-const DIR_NAME = "uploadfiles";
-const REGION ='us-east-1';
-const ACCESS_KEY ='AKIAX6M7U3EZAEG7T2MP';
-const SECRET_ACCESS_KEY ='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';
+//import UploadImageToS3WithNativeSdk from "./components/UploadImageToS3WithNativeSdk"
+//import UploadImageToS3WithReactS3 from "./components/UploadImageToS3WithReactS3"
 
 
+const S3_BUCKET =process.env.REACT_APP_S3_BUCKET;
+const DIR_NAME = process.env.REACT_APP_DIR_NAME;
+const REGION =process.env.REACT_APP_REGION;
+const ACCESS_KEY =process.env.REACT_APP_ACCESS_KEY;
+const SECRET_ACCESS_KEY =process.env.REACT_APP_SECRET_ACCESS_KEY;
 
 const config = {
-    bucketName: S3_BUCKET,
-    dirName: DIR_NAME,
-    region: REGION,
-    accessKeyId: ACCESS_KEY,
-    secretAccessKey: SECRET_ACCESS_KEY,
+  bucketName: S3_BUCKET,
+  dirName: DIR_NAME,
+  region: REGION,
+  accessKeyId: ACCESS_KEY,
+  secretAccessKey: SECRET_ACCESS_KEY,
 }
 
 // class App extends Component {
@@ -98,6 +97,7 @@ function App() {
   const [selectedFile, setSelectedFile] = useState(null);
 
     const handleFileInput = (e) => {
+        console.log(config)
         setSelectedFile(e.target.files[0]);
     }
 
@@ -110,8 +110,8 @@ function App() {
               var btn = document.getElementById("download");
               var chk = document.getElementById("chk");
               
-              btn.disabled = !chk.checked;
-              },3000);
+              btn.disabled = !chk.onclick;
+              },30000);
     }
 
     return (
@@ -125,7 +125,9 @@ function App() {
         <input type="file" class="form-control" onChange={handleFileInput}/>
         </div>
         <button id="chk" onClick={() => handleUpload(selectedFile)}> Upload to Classify</button>
-        <a disabled id="download" href='https://knnbucket.s3.amazonaws.com/downloadfiles/KNeighborsOut.csv' download>Click to download output</a>
+        <a href='https://knnbucket.s3.amazonaws.com/downloadfiles/KNeighborsOut.csv' download>
+        <button disabled id="download">Click to download output</button>
+        </a>
         
     </div>
     </div>
