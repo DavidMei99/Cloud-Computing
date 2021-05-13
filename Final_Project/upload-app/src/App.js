@@ -12,8 +12,8 @@ import UploadImageToS3WithReactS3 from "./components/UploadImageToS3WithReactS3"
 const S3_BUCKET ='knnbucket';
 const DIR_NAME = "uploadfiles";
 const REGION ='us-east-1';
-const ACCESS_KEY ='AKIAX6M7U3EZAEG7T2MP';
-const SECRET_ACCESS_KEY ='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';
+const ACCESS_KEY ='AKIAX6M7U3EZPHC6HEMI';
+const SECRET_ACCESS_KEY ='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';
 
 
 
@@ -110,8 +110,8 @@ function App() {
               var btn = document.getElementById("download");
               var chk = document.getElementById("chk");
               
-              btn.disabled = !chk.checked;
-              },3000);
+              btn.disabled = !chk.onclick;
+              },30000);
     }
 
     return (
@@ -125,7 +125,9 @@ function App() {
         <input type="file" class="form-control" onChange={handleFileInput}/>
         </div>
         <button id="chk" onClick={() => handleUpload(selectedFile)}> Upload to Classify</button>
-        <a disabled id="download" href='https://knnbucket.s3.amazonaws.com/downloadfiles/KNeighborsOut.csv' download>Click to download output</a>
+        <a href='https://knnbucket.s3.amazonaws.com/downloadfiles/KNeighborsOut.csv' download>
+        <button disabled id="download">Click to download output</button>
+        </a>
         
     </div>
     </div>

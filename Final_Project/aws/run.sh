@@ -51,6 +51,7 @@ do
   fi
 done
 
+SECONDS=0
 for ((i = 0 ; i < NUM_IPS-1 ; i++)); do
   #copy files 
   ssh -i ${KEY_FILE} ${USER}@${INSTANCES_IPS_ARRAY[${i}]} "aws s3 cp s3://${BUCKET_NAME}/dataset/ ./multi-node-threaded/digitsDataset" --recursive
@@ -65,6 +66,9 @@ ssh -i ${KEY_FILE} ${USER}@${ELASTIC_IP} "aws s3 cp s3://${BUCKET_NAME}/dataset/
 ssh -i ${KEY_FILE} ${USER}@${INSTANCES_IPS_ARRAY[${i}]} "aws s3 cp s3://${BUCKET_NAME}/uploadfiles/ ./multi-node-threaded/digitsDataset" --recursive
 ssh -i ${KEY_FILE} ${USER}@${ELASTIC_IP} "java -cp ${PROG} edu.cooper.ece465.KNNmain 8 multi-node-threaded/digitsDataset/valFeatures.csv ${PRIVATE_IPS_ARRAY[0]} ${PRIVATE_IPS_ARRAY[1]} ${PRIVATE_IPS_ARRAY[2]} ${PRIVATE_IPS_ARRAY[3]}" | tee -a ${LOGFILE}
 ssh -i ${KEY_FILE} ${USER}@${ELASTIC_IP} "aws s3 cp KNeighborsOut.csv s3://${BUCKET_NAME}/downloadfiles/ "
+echo "time is"
+echo $SECONDS
+
 
 #clean datasets
 ssh -i ${KEY_FILE} ${USER}@${ELASTIC_IP} "rm multi-node-threaded/digitsDataset/*"

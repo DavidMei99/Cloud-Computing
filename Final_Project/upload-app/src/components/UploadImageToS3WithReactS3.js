@@ -34,7 +34,7 @@ const UploadImageToS3WithReactS3 = () => {
         <div>React S3 File Upload</div>
         <input type="file" onChange={handleFileInput}/>
         <button onClick={() => handleUpload(selectedFile)}> Upload to S3</button>
-        <a href='https://knnbucket.s3.amazonaws.com/KNeighborsOut.csv' download>Click to download</a>
+        <button disable href='https://knnbucket.s3.amazonaws.com/KNeighborsOut.csv' download>Click to download</button>
     </div>
 }
 

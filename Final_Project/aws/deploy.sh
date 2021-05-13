@@ -25,10 +25,10 @@ echo "Public IP addresses: ${INSTANCES_IPS}" | tee -a ${LOGFILE}
 for host in ${INSTANCES_IPS}
 do
 	echo "Copying over ${PROG} to ${USER}@${host}:~/ ..." | tee -a ${LOGFILE}
-	scp -i ${KEY_FILE} ${PROG} ${USER}@${host}:~/ | tee -a ${LOGFILE}
+	#scp -i ${KEY_FILE} ${PROG} ${USER}@${host}:~/ | tee -a ${LOGFILE}
 	#ssh -i ${KEY_FILE} ${USER}@${host} "sudo amazon-linux-extras install java-openjdk11" | tee -a ${LOGFILE}
     #ssh -i ${KEY_FILE} ${USER}@${host} "mkdir multi-node-threaded"
-    #ssh -i ${KEY_FILE} ${USER}@${host} "aws configure"
+  ssh -i ${KEY_FILE} ${USER}@${host} "aws configure"
 done
 echo "Done." | tee -a ${LOGFILE}
 
