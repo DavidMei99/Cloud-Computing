@@ -30,35 +30,35 @@ echo "${NUM_IPS}"
 
 echo "${PRIVATE_IPS_ARRAY[0]}"
 
-
-
+while true
+do
 #empty uploadfiles directory
 ssh -i ${KEY_FILE} ${USER}@${ELASTIC_IP} "aws s3 rm s3://${BUCKET_NAME}/${DIR_NAME}/ --recursive --exclude ''"
-
-#empty downloadfiles directory
-ssh -i ${KEY_FILE} ${USER}@${ELASTIC_IP} "aws s3 rm s3://${BUCKET_NAME}/downloadfiles/ --recursive --exclude ''"
 
 
 while true
 do
   FILE_UPLOAD=$(ssh -i ${KEY_FILE} ${USER}@${ELASTIC_IP} "aws s3 ls s3://${BUCKET_NAME}/${DIR_NAME}/ | wc -l")
-  echo "${FILE_UPLOAD}"
+  #echo "${FILE_UPLOAD}"
   if [ "${FILE_UPLOAD}" -gt 1 ]
   then 
+    echo "File Uploaded"
     break
   else
     continue
   fi
 done
 
-SECONDS=0
+#empty downloadfiles directory
+ssh -i ${KEY_FILE} ${USER}@${ELASTIC_IP} "aws s3 rm s3://${BUCKET_NAME}/downloadfiles/ --recursive --exclude ''"
+
 for ((i = 0 ; i < NUM_IPS-1 ; i++)); do
   #copy files 
   ssh -i ${KEY_FILE} ${USER}@${INSTANCES_IPS_ARRAY[${i}]} "aws s3 cp s3://${BUCKET_NAME}/dataset/ ./multi-node-threaded/digitsDataset" --recursive
   ssh -i ${KEY_FILE} ${USER}@${INSTANCES_IPS_ARRAY[${i}]} "aws s3 cp s3://${BUCKET_NAME}/uploadfiles/ ./multi-node-threaded/digitsDataset" --recursive
   echo "Running ${PROG} at ${USER}@${INSTANCES_IPS_ARRAY[${i}]}:~/ ..." | tee -a ${LOGFILE}
   ssh -i ${KEY_FILE} ${USER}@${INSTANCES_IPS_ARRAY[${i}]} "killall -9 java"
-	(ssh -i ${KEY_FILE} ${USER}@${INSTANCES_IPS_ARRAY[${i}]} "java -cp ${PROG} edu.cooper.ece465.ClientMain 8 multi-node-threaded/digitsDataset/valFeatures.csv 6666" | tee -a ${LOGFILE}) & disown %1
+  (ssh -i ${KEY_FILE} ${USER}@${INSTANCES_IPS_ARRAY[${i}]} "java -cp ${PROG} edu.cooper.ece465.ClientMain 8 multi-node-threaded/digitsDataset/valFeatures.csv 6666" | tee -a ${LOGFILE}) & disown %1
 done
 sleep 1
 ssh -i ${KEY_FILE} ${USER}@${ELASTIC_IP} "killall -9 java"
@@ -66,14 +66,16 @@ ssh -i ${KEY_FILE} ${USER}@${ELASTIC_IP} "aws s3 cp s3://${BUCKET_NAME}/dataset/
 ssh -i ${KEY_FILE} ${USER}@${INSTANCES_IPS_ARRAY[${i}]} "aws s3 cp s3://${BUCKET_NAME}/uploadfiles/ ./multi-node-threaded/digitsDataset" --recursive
 ssh -i ${KEY_FILE} ${USER}@${ELASTIC_IP} "java -cp ${PROG} edu.cooper.ece465.KNNmain 8 multi-node-threaded/digitsDataset/valFeatures.csv ${PRIVATE_IPS_ARRAY[0]} ${PRIVATE_IPS_ARRAY[1]} ${PRIVATE_IPS_ARRAY[2]} ${PRIVATE_IPS_ARRAY[3]}" | tee -a ${LOGFILE}
 ssh -i ${KEY_FILE} ${USER}@${ELASTIC_IP} "aws s3 cp KNeighborsOut.csv s3://${BUCKET_NAME}/downloadfiles/ "
-echo "time is"
-echo $SECONDS
+
+
 
 
 #clean datasets
 ssh -i ${KEY_FILE} ${USER}@${ELASTIC_IP} "rm multi-node-threaded/digitsDataset/*"
 for ((i = 0 ; i < NUM_IPS-1 ; i++)); do
   ssh -i ${KEY_FILE} ${USER}@${INSTANCES_IPS_ARRAY[${i}]} "rm multi-node-threaded/digitsDataset/*"
+done
+
 done
 
 echo "Done." | tee -a ${LOGFILE}
