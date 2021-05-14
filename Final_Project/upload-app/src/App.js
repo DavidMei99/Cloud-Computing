@@ -133,15 +133,7 @@ function App() {
     </div>
     </div>)
 
-  // return (
-  //   <div class="container">
-  //     <div class = "row">
-  //       <div class="col-md-6">
-  //         <UploadImageToS3WithReactS3 />
-  //       </div>
-  //   </div>
-  // </div>
-  // );
+
 }
 
 export default App;
