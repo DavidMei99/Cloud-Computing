@@ -28,6 +28,7 @@ do
 	scp -i ${KEY_FILE} ${PROG} ${USER}@${host}:~/ | tee -a ${LOGFILE}
 	ssh -i ${KEY_FILE} ${USER}@${host} "sudo amazon-linux-extras install java-openjdk11" | tee -a ${LOGFILE}
   ssh -i ${KEY_FILE} ${USER}@${host} "mkdir multi-node-threaded"
+  ssh -i ${KEY_FILE} ${USER}@${host} "mkdir multi-node-threaded/digitsDataset"
   ssh -i ${KEY_FILE} ${USER}@${host} "aws configure"
   #ssh -i ${KEY_FILE} ${USER}@${host} "ls"
 done

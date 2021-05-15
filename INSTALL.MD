@@ -25,6 +25,7 @@ cd Cloud-Computing/Final_Project/aws
 ```
 ./create_s3.sh
 ```
+For convenience, create a directory named "dataset" and mannually upload training datasets to S3 bucket  
 ### 5. Allocate and Associate Elastic IP Address
 a. Login to AWS Console with an IAM role of Administrator access  
 b. Go to EC2 > Network & Security > Elastic IPs  
