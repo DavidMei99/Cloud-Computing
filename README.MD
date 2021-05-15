@@ -13,10 +13,10 @@ Cloud-KNN is a multi-node multi-threaded KNN Image Classifier implemented on AWS
 The k-nearest neighbors algorithm (k-NN) is a classification method. The input consists of the k closest training examples. In k-NN classification, the output is a class. An object is classified by a plurality vote of its neighbors, with the object being assigned to the class most common among its k nearest neighbors 
 
 ## Dataset and Data Preprocessing
-[MNIST Handwritten Digits Dataset](http://yann.lecun.com/exdb/mnist/) from Yann LeCun, Courant Institute, NYU \\
-Training Set Size: 6000 \\
-Testing Set Size: 1000 \\
-Data type: 28*28 Normalized Pixel Values\\
+[MNIST Handwritten Digits Dataset](http://yann.lecun.com/exdb/mnist/) from Yann LeCun, Courant Institute, NYU  
+Training Set Size: 6000  
+Testing Set Size: 1000  
+Data type: 28*28 Normalized Pixel Values  
 For the images, each pixel has an intensity from 0-255; we normalize and convert it to a real number in the range 0.0-1.0 then concatenated them.
 
 
@@ -113,5 +113,5 @@ The frontend
 
 * Visualization
 * A more flexible frontend
-<br>The current frontend is a static webpage requiring the user to upload a testing file and then wait for the label result to be downloaded. Since the KNN algorithm is a machine learning technique, we will add more elements for the user in the frontend. For instance, users will be allowed to adjust the hyparameters of the classifier
+<br>The current frontend is a static webpage requiring the user to upload a testing file and then wait for the label result to be downloaded. Since the KNN algorithm is a machine learning technique, we will add more elements for the user in the frontend. For instance, users will be allowed to adjust the hyparameters of the classifier or customize their own dataset for training in the future.
 * Multiple connection
