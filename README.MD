@@ -2,9 +2,9 @@
 
 Di Mei & Zhihao Wang
 
-## **Cloud-KNN**
+# **Cloud-KNN**
 
-A Multi-node Multi-threaded KNN Algorithm in JAVA
+Cloud-KNN is a multi-node multi-threaded KNN Image Classifier
 
 ## AWS Cloud Architecture
 ![Alt text](https://github.com/wzhlifelover/Cloud-Computing/blob/main/img/cloud_knn.png "Cloud Architecture")
@@ -13,10 +13,12 @@ A Multi-node Multi-threaded KNN Algorithm in JAVA
 The k-nearest neighbors algorithm (k-NN) is a classification method. The input consists of the k closest training examples. In k-NN classification, the output is a class. An object is classified by a plurality vote of its neighbors, with the object being assigned to the class most common among its k nearest neighbors 
 
 ## Dataset and Data Preprocessing
-MNIST Handwritten Digits Dataset from Yann LeCun, Courant Institute, NYU
+[MNIST Handwritten Digits Dataset](http://yann.lecun.com/exdb/mnist/) from Yann LeCun, Courant Institute, NYU
 Training Set Size: 6000
 Testing Set Size: 1000
 Data type: 28*28 Normalized Pixel Values
+For the images, each pixel has an intensity from 0-255; we normalize and convert it to a real number in the range 0.0-1.0 then concatenated them.
+
 
 
 ## Backend
@@ -104,8 +106,12 @@ The frontend
 
 
 ## Project Presentation
-![Link to Project Presentation](https://youtu.be/mjnKNFuz84U)
+[Link to Project Presentation Video](https://youtu.be/mjnKNFuz84U)
+[Access the Presentation Slides](https://github.com/wzhlifelover/Cloud-Computing/blob/main/other/KNN_Classfier_Final_Presentation.pptx)
 
 ## Future Works
 
-* A more user-firnedly frontend
+* Visualization
+* A more flexible frontend
+<br>The current frontend is a static webpage requiring the user to upload a testing file and then wait for the label result to be downloaded. Since the KNN algorithm is a machine learning technique, we are supposed to add more interface elements in the frontend. For instance, we will 
+* Multiple connection
