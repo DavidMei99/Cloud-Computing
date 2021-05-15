@@ -9,7 +9,15 @@ A Multi-node Multi-threaded KNN Algorithm in JAVA
 ## AWS Cloud Architecture
 ![Alt text](https://github.com/wzhlifelover/Cloud-Computing/blob/main/img/cloud_knn.png "Cloud Architecture")
 
-## KNN Algorithm & Dataset
+## KNN Algorithm
+The k-nearest neighbors algorithm (k-NN) is a classification method. The input consists of the k closest training examples. In k-NN classification, the output is a class. An object is classified by a plurality vote of its neighbors, with the object being assigned to the class most common among its k nearest neighbors 
+
+## Dataset and Data Preprocessing
+MNIST Handwritten Digits Dataset from Yann LeCun, Courant Institute, NYU
+Training Set Size: 6000
+Testing Set Size: 1000
+Data type: 28*28 Normalized Pixel Values
+
 
 ## Backend
 
@@ -91,3 +99,13 @@ The ClientMain.java run on the worker node is going to receive the assigned work
 
 
 ## Frontend
+
+The frontend 
+
+
+## Project Presentation
+![Link to Project Presentation](https://youtu.be/mjnKNFuz84U)
+
+## Future Works
+
+* A more user-firnedly frontend
