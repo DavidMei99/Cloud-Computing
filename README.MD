@@ -4,7 +4,7 @@ Di Mei & Zhihao Wang
 
 # **Cloud-KNN**
 
-Cloud-KNN is a multi-node multi-threaded KNN Image Classifier implemented on AWS Cloud
+Cloud-KNN is a multi-node multi-threaded KNN Image Classifier implemented on AWS Cloud. Any user can upload a set of images (preprocessed features stored in a file) in this application and then get the label results based on the MNIST dataset.
 
 ## AWS Cloud Architecture
 ![Alt text](https://github.com/wzhlifelover/Cloud-Computing/blob/main/img/cloud_knn.png "Cloud Architecture")
@@ -102,16 +102,20 @@ The ClientMain.java run on the worker node is going to receive the assigned work
 
 ## Frontend
 
-The frontend 
+The frontend is a simple web-application created with ReactJS. It is implemented on S3 static web hosting so the user can access it directly through a static url.
+The user will select a preprocessed test file and upload it to the S3 bucket.
+The backend will receive the file from the S3 bucket and automatically train and returns the labels.
+The user can then download the output labels file by clicking the download button.
 
 
 ## Project Presentation
-[Link to Project Presentation Video](https://youtu.be/mjnKNFuz84U)
-[Access the Presentation Slides](https://github.com/wzhlifelover/Cloud-Computing/blob/main/other/KNN_Classfier_Final_Presentation.pptx)
+[Link to Project Presentation Video](https://youtu.be/mjnKNFuz84U)  
+[Access the Presentation Slides](https://github.com/wzhlifelover/Cloud-Computing/blob/main/other/KNN_Classfier_Final_Presentation.pptx)  
 
 ## Future Works
 
-* Visualization
-* A more flexible frontend
-<br>The current frontend is a static webpage requiring the user to upload a testing file and then wait for the label result to be downloaded. Since the KNN algorithm is a machine learning technique, we will add more elements for the user in the frontend. For instance, users will be allowed to adjust the hyparameters of the classifier or customize their own dataset for training in the future.
-* Multiple connection
+* Visualization  
+* A more flexible frontend  
+The current frontend is a static webpage requiring the user to upload a testing file and then wait for the label result to be downloaded. Since the KNN algorithm is a machine learning technique, we will add more elements for the user in the frontend. For instance, users will be allowed to adjust the hyparameters of the classifier or customize their own dataset for training in the future.  
+* Multiple connection  
+Currently, our application can only take users' requests in a serializable manner (user by user). In the future, we will make our application allow the usage by mulitple users at the same time.
